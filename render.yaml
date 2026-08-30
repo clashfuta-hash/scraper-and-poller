@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: clash-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "true"
+      - key: MONGO_URI
+        sync: false
+      - key: THREESIXTYFIVE_API_KEY
+        sync: false
+      - key: API_BASE_URL
+        value: "https://clash-api-m5mr.onrender.com"
+    numInstances: 1
+    healthCheckPath: /health
