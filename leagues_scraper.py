@@ -333,7 +333,7 @@ def scrape_one_round(
 def scrape_league_fixtures_window(
     store: FixtureStore,
     league_key: str,
-    days_ahead: int = 7,
+    days_ahead: int = 16,
     reference_override: Optional[datetime.datetime] = None,
     forwarder: Optional[Forwarder] = None,
 ) -> int:
